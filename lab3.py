@@ -51,18 +51,19 @@ print(steps(n))
 #Задание 4
 #Напишите программу, в которой задается натуральное число n и выводится пирамида из n ступенек, i-я ступень должна состоять из чисел от 1 до i и обратно без пробелов.
 
+n = int(input("введите натуральное число: "))
 
-def steps(n):
-    for i in range(1, n + 1):
-        l = ''
-        for j in range(1, i + 1):
-            l = l + str(j)
-        for j in range(i - 1, 0, -1):
-            l = l + str(j)
-        print(l)
-    return 'End'
 
-n = 0
-n = int(input())
+for i in range(1,n+1):
+    #spaces in the beginning
+    for j in range(n-i,0,-1):
+        print(" ",end="")
+        
+    for k in range(1,i+1):
+        print(k,end='')
 
-print(steps(n))
+    #обратный
+    for t in range(i-1,0,-1):
+        print(t,end='')
+    #go to the next line 
+    print()
